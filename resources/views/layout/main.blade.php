@@ -120,17 +120,17 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/product" class="nav-link {{ $subpage1 == 'product' ? 'active' : '' }}">
+                                    <a href="/vendor-service" class="nav-link {{ $subpage1 == 'vendor-service' ? 'active' : '' }}">
                                         <i class="far fa-circle nav-icon"></i>
                                         <i class="nav-icon fas fa-box"></i>
-                                        <p>Product</p>
+                                        <p>Vendor Service</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="/category" class="nav-link {{ $subpage1 == 'category' ? 'active' : '' }}">
                                         <i class="far fa-circle nav-icon"></i>
                                         <i class="nav-icon fas fa-boxes"></i>
-                                        <p>Category</p>
+                                        <p>Category Service</p>
                                     </a>
                                 </li>
                             </ul>
@@ -176,7 +176,7 @@
                             <a href="/package" class="nav-link {{ $page == 'package' ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-cube"></i>
                                 <p>
-                                    Paket
+                                    Package
                                 </p>
                             </a>
                         </li>
@@ -185,7 +185,7 @@
                             <a href="/report" class="nav-link {{ $page == 'report' ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-file"></i>
                                 <p>
-                                    Laporan
+                                    Report
                                 </p>
                             </a>
                         </li>

@@ -18,8 +18,9 @@
     gap: 10px;
     align-items: center;
     justify-content: center;
-    background: lightcyan;
+    background: #001F3F;
     box-shadow: 0 0 10px rgba(0,0,0,.1);
+    color: white;
 }
 
 

@@ -18,6 +18,48 @@ class VendorController extends Controller
         ]);
     }
 
+    public function create()
+    {
+        return view('vendor.create', [
+            'title' => 'Edit Vendor',
+            'page' => 'vendor',
+            'subpage1' => 'list',
+        ]);
+    }
+
+    public function store(Request $request){
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+            'password' => 'required|confirmed',
+            'password_confirmation' => 'required',
+        ]);
+
+        try {
+            Vendor::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'phone' => $request->phone,
+                'password' => bcrypt($request->password),
+            ]);
+    
+            return redirect('/vendor')->with([
+                'success' => 'Data berhasil ditambahkan',
+            ]);
+        } catch (\Throwable $th) {
+            if($th->errorInfo[0] == 23000){
+                return back()->withErrors([
+                    'email' => 'email has been used'
+                ]);
+            }
+
+            return redirect('/vendor')->withErrors([
+                'success' => 'Data gagal ditambahkan',
+            ]);
+        }
+    }
+
     public function edit($vendorId)
     {
         $vendor = Vendor::find($vendorId);

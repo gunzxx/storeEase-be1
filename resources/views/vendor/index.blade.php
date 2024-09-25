@@ -28,6 +28,12 @@
             </div>
         </div>
     @endsession
+    
+    <div class="create-btn-container">
+        <a href="/vendor/create">
+            Tambah vendor<i class="fas fa-plus"></i>
+        </a>
+    </div>
 
     <div class="table-container">
         <table class="table">

@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
+use App\Models\ServiceCategory;
 use Illuminate\Http\Request;
 
-class CategoryController extends Controller
+class ServiceCategoryController extends Controller
 {
     public function index()
     {
-        $categories = Category::all();
-        return view('category.index', [
+        $categories = ServiceCategory::all();
+        return view('serviceCategory.index', [
             'title' => 'Category',
             'page' => 'vendor',
             'subpage1' => 'category',
@@ -20,8 +20,8 @@ class CategoryController extends Controller
 
     public function create()
     {
-        $categories = Category::all();
-        return view('category.create', [
+        $categories = ServiceCategory::all();
+        return view('serviceCategory.create', [
             'title' => 'Category',
             'page' => 'vendor',
             'subpage1' => 'category',
@@ -35,7 +35,7 @@ class CategoryController extends Controller
             'name' => 'required|min:3',
         ]);
 
-        Category::create([
+        ServiceCategory::create([
             'name' => $request->name,
         ]);
 
@@ -46,14 +46,14 @@ class CategoryController extends Controller
 
     public function edit($categoryId)
     {
-        $category = Category::find($categoryId);
+        $category = ServiceCategory::find($categoryId);
         if (!$category) {
             return redirect('/category')->withErrors([
                 'data' => 'data tidak ditemukan',
             ]);
         }
 
-        return view('category.edit', [
+        return view('serviceCategory.edit', [
             'title' => 'Edit Category',
             'page' => 'vendor',
             'subpage1' => 'category',
@@ -67,7 +67,7 @@ class CategoryController extends Controller
             'name' => 'required|min:3',
         ]);
 
-        $category = Category::find($categoryId);
+        $category = ServiceCategory::find($categoryId);
         if (!$category) {
             return redirect('/category')->withErrors([
                 'data' => 'data tidak ditemukan',
@@ -85,7 +85,7 @@ class CategoryController extends Controller
 
     public function delete($categoryId)
     {
-        $category = Category::find($categoryId);
+        $category = ServiceCategory::find($categoryId);
         if (!$category) {
             return response()->json([
                 'message' => 'Data tidak ditemukan',

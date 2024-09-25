@@ -29,6 +29,12 @@
         </div>
     @endsession
 
+    <div class="create-btn-container">
+        <a href="/vendor-service/create">
+            Tambah service<i class="fas fa-plus"></i>
+        </a>
+    </div>
+
     <div class="table-container">
         <table class="table">
             <thead>
@@ -36,8 +42,8 @@
                     <th scope="col">No.</th>
                     <th scope="col">Nama</th>
                     <th scope="col">Harga</th>
-                    <th scope="col">Kategori</th>
                     <th scope="col">Vendor</th>
+                    <th scope="col">Kategori</th>
                     <th class="action-col" scope="col">Aksi</th>
                 </tr>
             </thead>
@@ -54,10 +60,10 @@
                             <p>Rp. {{ number_format($product->price, 0, 3, '.') }}</p>
                         </td>
                         <td>
-                            <p>{{ $product->category->name }}</p>
+                            <p>{{ $product->vendor->name }}</p>
                         </td>
                         <td>
-                            <p>{{ $product->vendor->name }}</p>
+                            <p>{{ $product->serviceCategory->name }}</p>
                         </td>
                         <td>
                             <div class="action-container">

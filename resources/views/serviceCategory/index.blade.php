@@ -55,7 +55,7 @@
                             <p>{{ $category->name }}</p>
                         </td>
                         <td>
-                            <p>{{ $category->product->count() }}</p>
+                            <p>{{ $category->service->count() }}</p>
                         </td>
                         <td>
                             <div class="action-container">
